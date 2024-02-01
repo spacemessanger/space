@@ -121,8 +121,7 @@ const MobileSettingsModal: React.FC<MobileSettingsModalProps> = ({
                     <Button
                       disabled={isLoading}
                       secondary
-                      type="button"
-                    >
+                      type="button" name={''}                    >
                       Change
                     </Button>
                   </CldUploadButton>
@@ -143,15 +142,13 @@ const MobileSettingsModal: React.FC<MobileSettingsModalProps> = ({
         >
           <Button 
             disabled={isLoading}
-            secondary 
-            onClick={onClose}
-          >
+            secondary
+            onClick={onClose} name={''}          >
             Cancel
           </Button>
           <Button 
             disabled={isLoading}
-            type="submit"
-          >
+            type="submit" name={''}          >
             Save
           </Button>
         </div>

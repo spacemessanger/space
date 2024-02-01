@@ -86,15 +86,13 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
         <Button
           disabled={isLoading}
           danger
-          onClick={onDelete}
-        >
+          onClick={onDelete} name={''}        >
           Delete
         </Button>
         <Button
           disabled={isLoading}
           secondary
-          onClick={onClose}
-        >
+          onClick={onClose} name={''}        >
           Cancel
         </Button>
       </div>

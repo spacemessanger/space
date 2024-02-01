@@ -8,6 +8,7 @@ interface ButtonProps {
   secondary?: boolean;
   danger?: boolean;
   disabled?: boolean;
+  name: string;
 }
 
 const Button: React.FC<ButtonProps> = ({

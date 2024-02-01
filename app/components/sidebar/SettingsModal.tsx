@@ -17,7 +17,6 @@ interface SettingsModalProps {
   isOpen?: boolean;
   onClose: () => void;
   currentUser: User;
-  image: string; 
 }
 
 const SettingsModal: React.FC<SettingsModalProps> = ({ 
@@ -91,7 +90,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                 id="name"
                 errors={errors}
                 required
-                register={register} autocomplete={''}  />
+                register={register} autocomplete={''}              />
               <div>
                 <label 
                   htmlFor="photo" 
@@ -116,13 +115,12 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                   <CldUploadButton 
                     options={{ maxFiles: 1 }} 
                     onUpload={handleUpload} 
-                    uploadPreset="tvaapid5"
+                    uploadPreset="pgc9ehd5"
                   >
                     <Button
                       disabled={isLoading}
                       secondary
-                      type="button"
-                    >
+                      type="button" name={''}                    >
                       Change
                     </Button>
                   </CldUploadButton>
@@ -143,15 +141,13 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
         >
           <Button 
             disabled={isLoading}
-            secondary 
-            onClick={onClose}
-          >
+            secondary
+            onClick={onClose} name={''}          >
             Cancel
           </Button>
           <Button 
             disabled={isLoading}
-            type="submit"
-          >
+            type="submit" name={''}          >
             Save
           </Button>
         </div>

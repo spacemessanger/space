@@ -53,7 +53,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
     <>
       <ConfirmModal  
         isOpen={confirmOpen}
-        onClose={() => setConfirmOpen(false)} children={undefined}      />
+        onClose={() => setConfirmOpen(false)}  />
       <Transition.Root show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-50" onClose={onClose}>
           <Transition.Child
@@ -67,6 +67,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
           >
           <div className="fixed inset-0 bg-black bg-opacity-40" />
         </Transition.Child>
+ 
 
           <div className="fixed inset-0 overflow-hidden">
             <div className="absolute inset-0 overflow-hidden">
@@ -119,6 +120,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                           </div>
                         <div className="w-full pb-5 pt-5 sm:px-0 sm:pt-0">
                         <dl className="space-y-8 px-4 sm:space-y-6 sm:px-6">
+                          
+
                     
                           {data.isGroup && (
                             <div>
@@ -170,6 +173,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                               </dd>
                             </div>
                           )}
+                          
                           {!data.isGroup && (
                             <>
                               <hr />
@@ -193,25 +197,37 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                     sm:col-span-2
                                   "
                                 >
+                                        
+                                  
                                   <time dateTime={joinedDate}>
                                     {joinedDate}
                                   </time>
                                 </dd>
                               </div>
+
+
+     
                             </>
+                               
                           )}
                         </dl>
                       </div>
                         </div>
                       </div>
                     </div>
+                    
                   </Dialog.Panel>
+                  
                 </Transition.Child>
+                
               </div>
             </div>
           </div>
+          
         </Dialog>
+
       </Transition.Root>
+ 
     </>
   )
 }
