@@ -104,8 +104,8 @@ const ConversationList: React.FC<ConversationListProps> = ({
         border-gray-200 
       `, isOpen ? 'hidden' : 'block w-full left-0')}>
         <div className="px-5">
-          <div className="flex justify-between mb-4 pt-4">
-            <div className="text-2xl font-bold text-neutral-800">
+          <div className="flex justify-between mb-4 pt-4 text-align: center;">
+            <div className="text-2xl font-bold text-neutral-800 ">
               Messages
             </div>
             <div 
