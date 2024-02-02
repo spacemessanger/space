@@ -4,7 +4,7 @@ import { User } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { useEffect, useMemo, useState } from "react";
-import { MdOutlineGroupAdd } from 'react-icons/md';
+import { MdOutlineGroupAdd, MdCheck } from 'react-icons/md'; // импортируем иконку галочки
 import clsx from "clsx";
 import { find, uniq } from 'lodash';
 
@@ -13,6 +13,10 @@ import { pusherClient } from "@/app/libs/pusher";
 import GroupChatModal from "./GroupChatModal";
 import ConversationBox from "./ConversationBox";
 import { FullConversationType } from "@/app/types";
+import { BsCheckCircleFill } from "react-icons/bs";
+
+const verifiedUsers = ["Mirabella@mail.ru", "space@space"];
+
 
 interface ConversationListProps {
   initialItems: FullConversationType[];
@@ -76,6 +80,9 @@ const ConversationList: React.FC<ConversationListProps> = ({
     pusherClient.bind('conversation:new', newHandler)
     pusherClient.bind('conversation:remove', removeHandler)
   }, [pusherKey, router]);
+
+
+;
 
   return (
     <>

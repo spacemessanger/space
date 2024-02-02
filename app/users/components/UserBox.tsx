@@ -11,6 +11,11 @@ interface UserBoxProps {
   data: User
 }
 
+import { BsPatchCheckFill } from "react-icons/bs";
+
+const verifiedUsers = ["Mirabella@mail.ru", "space@space"];
+
+
 const UserBox: React.FC<UserBoxProps> = ({
   data 
 }) => {
@@ -59,8 +64,12 @@ const UserBox: React.FC<UserBoxProps> = ({
           <div className="focus:outline-none">
            <span className="absolute inset-0" aria-hidden="true" />
              <div className="flex justify-between items-center mb-1">
-               <p className="text-sm font-medium text-gray-900">
+               <p className="text-sm font-medium text-gray-900"  style={{display: "flex", alignItems: "center"}}>
                {data.name}
+               {verifiedUsers.includes(data.email!) && (
+
+             <BsPatchCheckFill size="15" />)}
+
             </p>
           </div>
           </div>

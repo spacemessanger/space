@@ -13,6 +13,11 @@ import Avatar from '@/app/components/sidebar/Avatar';
 import AvatarGroup from '@/app/components/sidebar/AvatarGroup';
 import ProfileDrawer from "./ProfileDrawer";
 
+import { BsPatchCheckFill } from "react-icons/bs";
+
+const verifiedUsers = ["Mirabella@mail.ru", "space@space"];
+
+
 interface HeaderProps {
   conversation: Conversation & {
     users: User[]
@@ -74,8 +79,14 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
         ) : (
           <Avatar user={otherUser} />
         )}
-        <div className="flex flex-col">
-          <div>{conversation.name || otherUser.name}</div>
+        <div className="flex flex-col" >
+          <div  style={{display: "flex", alignItems: "center" }} >{conversation.name || otherUser.name}
+          {verifiedUsers.includes(otherUser.email!) && (
+  <BsPatchCheckFill size="15" title="Подтвержденный пользователь" />
+)}
+
+          
+          </div>
           <div className="text-sm font-light text-neutral-500">
             {statusText}
           </div>

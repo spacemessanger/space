@@ -14,6 +14,9 @@ import AvatarGroup from '@/app/components/sidebar/AvatarGroup';
 
 
 
+
+
+
 interface ProfileDrawerProps {
   isOpen: boolean;
   onClose: () => void;
@@ -36,6 +39,9 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
   
   const title = useMemo(() => {
     return data.name || otherUser.name;
+
+
+    
   }, [data.name, otherUser.name]);
 
   const { members } = useActiveList();

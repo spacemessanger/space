@@ -10,6 +10,9 @@ import Avatar from "@/app/components/sidebar/Avatar";
 import useOtherUser from "@/app/hooks/useOtherUser";
 import AvatarGroup from "@/app/components/sidebar/AvatarGroup";
 import { FullConversationType } from "@/app/types";
+import { BsPatchCheckFill } from "react-icons/bs";
+
+const verifiedUsers = ["Mirabella@mail.ru", "space@space"];
 
 interface ConversationBoxProps {
   data: FullConversationType,
@@ -64,6 +67,9 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
     return 'Started a conversation';
   }, [lastMessage]);
 
+  // создаем массив с адресами электронной почты пользователей, которые имеют галочку
+
+
   return ( 
     <div
       onClick={handleClick}
@@ -91,9 +97,13 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
         <div className="focus:outline-none">
           <span className="absolute inset-0" aria-hidden="true" />
           <div className="flex justify-between items-center mb-1">
-            <p className="text-md font-medium text-gray-900">
-              {data.name || otherUser.name}
+            <p className="text-md font-medium text-gray-900" style={{display: "flex", alignItems: "center"}}>
+              {data.name || otherUser.name  } 
+              {data.users.every(user => verifiedUsers.includes(user.email!)) && (
+             <BsPatchCheckFill size="15"  />)}
+
             </p>
+
             {lastMessage?.createdAt && (
               <p 
                 className="
