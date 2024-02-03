@@ -75,22 +75,28 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
           <HiChevronLeft size={32} />
         </Link>
         {conversation.isGroup ? (
-          <AvatarGroup users={conversation.users} />
+     
+          <AvatarGroup users={conversation.users} setDrawerOpen={setDrawerOpen} />
         ) : (
-          <Avatar user={otherUser} />
+      
+          <Avatar user={otherUser} setDrawerOpen={setDrawerOpen} />
         )}
-        <div className="flex flex-col" >
-          <div  style={{display: "flex", alignItems: "center" }} >{conversation.name || otherUser.name}
-          {verifiedUsers.includes(otherUser.email!) && (
-  <BsPatchCheckFill size="15" title="Подтвержденный пользователь" />
-)}
+  
+        <Link href="#">
+  
+          <div className="flex flex-col" onClick={() => setDrawerOpen(true)}>
+            <div  style={{display: "flex", alignItems: "center" }} >{conversation.name || otherUser.name}
+            {verifiedUsers.includes(otherUser.email!) && (
+    <BsPatchCheckFill size="15" title="Подтвержденный пользователь" />
+  )}
 
-          
+            
+            </div>
+            <div className="text-sm font-light text-neutral-500">
+              {statusText}
+            </div>
           </div>
-          <div className="text-sm font-light text-neutral-500">
-            {statusText}
-          </div>
-        </div>
+        </Link>
       </div>
       <HiEllipsisHorizontal
         size={32}

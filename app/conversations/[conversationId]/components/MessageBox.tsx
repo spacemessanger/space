@@ -11,6 +11,12 @@ import { IoCheckmarkDoneSharp } from "react-icons/io5";
 import ImageModal from "./ImageModal";
 
 
+
+import { BsPatchCheckFill } from "react-icons/bs";
+
+const verifiedUsers = ["Mirabella@mail.ru", "space@space"];
+
+
 interface MessageBoxProps {
   data: FullMessageType;
   isLast?: boolean;
@@ -48,8 +54,11 @@ const MessageBox: React.FC<MessageBoxProps> = ({
       </div>
       <div className={body}>
         <div className="flex items-center gap-1">
-          <div className="text-sm text-gray-500">
-            {data.sender.name}
+          <div className="text-sm text-gray-500" style={{display: "flex", alignItems: "center" }}>
+
+            {data.sender.name}   {verifiedUsers.includes(data.sender.email!) && 
+  <BsPatchCheckFill size="15" title="Подтвержденный пользователь" /> }
+  
           </div>
           <div className="text-xs text-gray-400">
             {format(new Date(data.createdAt), 'p')}
