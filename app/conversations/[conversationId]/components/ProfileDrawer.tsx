@@ -14,6 +14,12 @@ import AvatarGroup from '@/app/components/sidebar/AvatarGroup';
 
 
 
+import { BsPatchCheckFill } from "react-icons/bs";
+
+const verifiedUsers = ["Mirabella@mail.ru", "space@space"];
+
+
+
 
 
 
@@ -107,9 +113,15 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                         <div className="flex flex-col items-center">
                           <div className="mb-2 " style={{transform: "scale(5)" }} >
                           {data.isGroup ? <AvatarGroup users={data.users} /> : <Avatar user={otherUser} />}
+                          
+
                           </div>
-                          <div>
-                            {title}
+
+                          <div  style={{display: "flex", alignItems: "center"}}>
+                            {title} 
+
+                         
+
                           </div>
                           <div className="text-sm text-gray-500">
                             {statusText}
@@ -195,6 +207,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                 >
                                   Joined
                                 </dt>
+
+
                                 <dd 
                                   className="
                                     mt-1 
@@ -211,8 +225,31 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                 </dd>
                               </div>
 
+                              <dt 
+                                  className="
+                                    text-sm 
+                                    font-medium 
+                                    text-gray-500 
+                                    sm:w-40 
+                                    sm:flex-shrink-0
+                                    
+                                  "
+                                  style={{display: "flex", alignItems: "center"}}
+                                >
+                             
+                                    {data.users.every(user => verifiedUsers.includes(user.email!)) && 
+                                    (
+             <BsPatchCheckFill size="15"  />   )} 
+
+             
+
+
+
+                                </dt>
+
 
      
+    
                             </>
                                
                           )}
