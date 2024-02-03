@@ -105,7 +105,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                       </div>
                       <div className="relative mt-6 flex-1 px-4 sm:px-6">
                         <div className="flex flex-col items-center">
-                          <div className="mb-2">
+                          <div className="mb-2 " style={{transform: "scale(5)" }} >
                           {data.isGroup ? <AvatarGroup users={data.users} /> : <Avatar user={otherUser} />}
                           </div>
                           <div>
