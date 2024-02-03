@@ -12,6 +12,8 @@ import Modal from '../Modal';
 import Button from '../Button';
 import Image from 'next/image';
 import { toast } from 'react-hot-toast';
+import { TbPhotoEdit } from "react-icons/tb";
+import { size } from 'lodash';
 
 interface MobileSettingsModalProps {
   isSidebarOpen?: boolean;
@@ -107,12 +109,14 @@ const MobileSettingsModal: React.FC<MobileSettingsModalProps> = ({
                 </label>
                 <div className="mt-2 flex items-center gap-x-3">
                   <Image
-                    width="48"
-                    height="48" 
-                    className="rounded-full" 
+                    width="200"
+                    height="200"
+                    className="object-fit object-cover rounded-full" 
                     src={image || currentUser?.image || '/images/placeholder6.png'}
                     alt="Avatar"
+                    objectFit="cover"
                   />
+
                   <CldUploadButton 
                     options={{ maxFiles: 1 }} 
                     onUpload={handleUpload} 
@@ -122,7 +126,7 @@ const MobileSettingsModal: React.FC<MobileSettingsModalProps> = ({
                       disabled={isLoading}
                       secondary
                       type="button" name={''}                    >
-                      Change
+                     <TbPhotoEdit  size="33" />
                     </Button>
                   </CldUploadButton>
                 </div>

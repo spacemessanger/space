@@ -12,6 +12,7 @@ import Modal from '../Modal';
 import Button from '../Button';
 import Image from 'next/image';
 import { toast } from 'react-hot-toast';
+import { TbPhotoEdit } from "react-icons/tb";
 
 interface SettingsModalProps {
   isOpen?: boolean;
@@ -106,9 +107,9 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                 </label>
                 <div className="mt-2 flex items-center gap-x-3">
                   <Image
-                    width="48"
-                    height="48" 
-                    className="rounded-full" 
+                      width="200"
+                      height="200"
+                      className="object-fit object-cover rounded-full" 
                     src={image || currentUser?.image || '/images/placeholder6.png'}
                     alt="Avatar"
                   />
@@ -121,7 +122,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                       disabled={isLoading}
                       secondary
                       type="button" name={''}                    >
-                      Change
+                         <TbPhotoEdit  size="33" />
                     </Button>
                   </CldUploadButton>
                 </div>

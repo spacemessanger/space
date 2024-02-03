@@ -23,6 +23,7 @@
     "bcrypt": "^5.1.1",
     "clsx": "^2.1.0",
     "date-fns": "^3.3.1",
+    "filestack-react": "^5.0.0",
     "lodash": "^4.17.21",
     "next": "14.1.0",
     "next-auth": "^4.24.5",
