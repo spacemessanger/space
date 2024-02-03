@@ -188,22 +188,18 @@ const AuthForm = () => {
 
           <div className="mt-6 flex gap-2 bg-white px-2 text-gray-500 
                 items-center relative">
-            <AuthSocialButton 
-              icon={TbFaceId} 
-              onClick={() => socialAction('biometric')} 
-            />
 
+<AuthSocialButton 
+              icon={BsGoogle} 
+              onClick={() => socialAction('google')} 
+              
+            />
           </div>
 
 
         </div>
 
 
-        <AuthSocialButton 
-              icon={BsGoogle} 
-              onClick={() => socialAction('google')} 
-              
-            />
 
         <div 
           className="
