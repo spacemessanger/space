@@ -24,9 +24,17 @@ interface HeaderProps {
   }
 }
 
+
+interface AvatarGroupProps {
+  users: User[];
+  setDrawerOpen: (open: boolean) => void; // добавляем эту строку
+}
+
+
 const Header: React.FC<HeaderProps> = ({ conversation }) => {
   const otherUser = useOtherUser(conversation);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  
 
   const { members } = useActiveList();
   const isActive = members.indexOf(otherUser?.email!) !== -1;
@@ -76,10 +84,10 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
         </Link>
         {conversation.isGroup ? (
      
-          <AvatarGroup users={conversation.users} setDrawerOpen={setDrawerOpen} />
+          <AvatarGroup users={conversation.users}  />
         ) : (
       
-          <Avatar user={otherUser} setDrawerOpen={setDrawerOpen} />
+          <Avatar user={otherUser}  />
         )}
   
         <Link href="#">
