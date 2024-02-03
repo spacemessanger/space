@@ -117,7 +117,7 @@ const AuthForm = () => {
           sm:px-10
         "
       >
-        <form 
+        <form  
           className="space-y-6" 
           onSubmit={handleSubmit(onSubmit)}
         >
@@ -130,10 +130,14 @@ const AuthForm = () => {
               id="name" 
               label="Username"
               autocomplete="username"
+              
+     
 
             />
+            
           )}
           <Input 
+
             disabled={isLoading}
             register={register}
             errors={errors}
@@ -142,7 +146,10 @@ const AuthForm = () => {
             label="Email" 
             type="email"
             autocomplete="email"
+            
+            
           />
+      
           <Input 
             disabled={isLoading}
             register={register}
@@ -179,17 +186,25 @@ const AuthForm = () => {
             </div>
           </div>
 
-          <div className="mt-6 flex gap-2">
+          <div className="mt-6 flex gap-2 bg-white px-2 text-gray-500 
+                items-center relative">
             <AuthSocialButton 
               icon={TbFaceId} 
               onClick={() => socialAction('biometric')} 
             />
-            <AuthSocialButton 
+
+          </div>
+
+
+        </div>
+
+
+        <AuthSocialButton 
               icon={BsGoogle} 
               onClick={() => socialAction('google')} 
+              
             />
-          </div>
-        </div>
+
         <div 
           className="
             flex 
@@ -203,6 +218,9 @@ const AuthForm = () => {
         >
           <div>
             {variant === 'LOGIN' ? 'New to Space?' : 'Already have an account?'} 
+
+  
+
           </div>
           <div 
             onClick={toggleVariant} 

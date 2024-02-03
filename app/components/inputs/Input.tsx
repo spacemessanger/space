@@ -15,7 +15,8 @@ interface InputProps {
   register: UseFormRegister<FieldValues>,
   errors: FieldErrors
   disabled?: boolean;
-  autocomplete: string; // Добавляем autocomplete в интерфейс
+  autocomplete: string; 
+
 }
 
 const Input: React.FC<InputProps> = ({
@@ -34,7 +35,7 @@ const Input: React.FC<InputProps> = ({
         htmlFor={id} 
         className="
           block 
-          text-sm 
+          text-sm
           font-medium 
           leading-6 
           text-gray-900
@@ -54,7 +55,7 @@ const Input: React.FC<InputProps> = ({
             block 
             w-full 
             rounded-md 
-            border-0 
+            border-0
             py-1.5 
             text-gray-900 
             shadow-sm 
@@ -64,12 +65,13 @@ const Input: React.FC<InputProps> = ({
             placeholder:text-gray-400 
             focus:ring-2 
             focus:ring-inset 
-            focus:ring-sky-600 
+            focus:ring-gray-600 
             sm:text-sm 
             sm:leading-6`,
             errors[id] && 'focus:ring-rose-500',
             disabled && 'opacity-50 cursor-default'
           )}
+          style={{borderRadius: '40px'}}
         />
       </div>
     </div>

@@ -18,26 +18,32 @@ export default function Home() {
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
       <Image 
          alt="Logo"
-         height="90"
-         width="90"
+         height="200"
+         width="200"
          className="mx-auto w-auto"
          src="/images/logo.png"
+         objectPosition="left"
+
       />
       <h2
          className="
             mt-6
             text-center
-            text-3xl
+            text-4xl
             font-bold
             tracking-tigth
-            text-gray-900       
+            text-gray-900  
          "
+         style={{
+           position: "relative",
+           top: "-50px",
+           left: "-20px"
+         }}
       >
-         Welcome to Space!  
+         Space 
       </h2>
       </div>  
      <AuthForm />
      </div>
     )
   }
-  
