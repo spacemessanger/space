@@ -1,6 +1,6 @@
 export default function checkPageStatus(message, user) {
     if(!("Notification" in window)) {
-      alert("This browser does not support system notifications!")
+
     } 
     else if(Notification.permission === "granted") {
       sendNotification(message, user)
