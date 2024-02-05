@@ -11,6 +11,8 @@ import {
 import { HiPaperClip } from "react-icons/hi";
 import MessageInput from "./MessageInput";
 import { HiPaperAirplane } from "react-icons/hi2";
+import checkPageStatus from "@/app/utils/functions"
+
 
 const Form = () => {
 
@@ -36,6 +38,9 @@ const Form = () => {
         axios.post('/api/messages', {
           ...data,
           conversationId
+        }).then(() => {
+          // Вызовите функцию checkPageStatus здесь
+          checkPageStatus(data.message, localStorage.getItem("userName"));
         })
       };
     
@@ -43,6 +48,9 @@ const Form = () => {
     axios.post('/api/messages', {
       image: result.info.secure_url,
       conversationId: conversationId
+    }).then(() => {
+      // Вызовите функцию checkPageStatus здесь
+      checkPageStatus(result.info.secure_url, localStorage.getItem("userName"));
     })
   }
 
